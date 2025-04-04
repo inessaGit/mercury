@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI Test Suite" parallel="classes" thread-count="10">
+
+	<listeners>
+		<listener class-name="com.example.utils.SummaryReport" />
+	</listeners>
+
+	<test name="Sample UI Test - Desktop" parallel="classes">
+		<classes>
+		    <class name="com.example.test.actions.TestAlert" />
+		    <class name="com.example.test.actions.TestCaptureScreenshot" />
+		    <class name="com.example.test.actions.TestCheckBox" />
+		    <class name="com.example.test.actions.TestConfirm" />
+		    <class name="com.example.test.actions.TestDoubleClick" />
+		    <class name="com.example.test.actions.TestDragAndDrop" />
+		    <class name="com.example.test.actions.TestDropDown" />
+		    <class name="com.example.test.actions.TestMouseOver" />
+		    <class name="com.example.test.actions.TestPrompt" />
+		    <class name="com.example.test.actions.TestRadioButton" />
+		    <class name="com.example.test.actions.TestRightClick" />
+		    <class name="com.example.test.actions.TestCookie" />
+		  
+			<class name="com.example.test.TestGoogleSearch" />
+		</classes>
+	</test>
+
+	<test name="Sample UI Test - Mobile" parallel="classes">
+		<classes>
+			<class name="com.example.test.TestMobileGoogleSearch" />
+		</classes>
+	</test>
+</suite>  

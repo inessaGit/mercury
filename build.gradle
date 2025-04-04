@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id 'io.qameta.allure' version '2.12.0'
+    id("io.qameta.allure-report") version "2.12.0"
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useTestNG()
+}
+dependencies {
+    implementation group: 'org.testng', name: 'testng', version: '7.0.0'
+    implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.13.1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.26.0'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.8.0'
+    implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'
+    runtimeOnly group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.6'
+}
+configurations {
+    testCompile
+}
+group = 'com.example.core-automation'
+version = "1.0.0-RELEASE"
+jar.archiveBaseName = 'ui-automation-lib'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+}
+test {
+    useTestNG {
+        suites System.getProperty('suiteXmlFile', 'src/test/resources/testng.xml')
+    }
+    testLogging.showStandardStreams = true
+    finalizedBy 'downloadAllure', 'allureReport'
+    systemProperties System.properties
+}
+
+
+
+
