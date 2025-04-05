@@ -2,11 +2,9 @@ package com.example.pages;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-
 import io.qameta.allure.Step;
 
 public class GoogleSearch extends AbstractBasePage<GoogleSearch> {
-
 	private static final String URL = "https://www.google.com";
 
 	public GoogleSearch(WebDriver driver) {

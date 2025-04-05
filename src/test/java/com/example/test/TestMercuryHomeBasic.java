@@ -8,8 +8,8 @@ import org.testng.annotations.*;
 
 import java.time.*;
 
-public class MercuryHome {
-    private static final Logger LOG = LoggerFactory.getLogger(MercuryHome.class);
+public class TestMercuryHomeBasic {
+    private static final Logger LOG = LoggerFactory.getLogger(TestMercuryHomeBasic.class);
 
     @Test
     public void testHomePage(){
@@ -24,7 +24,10 @@ public class MercuryHome {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='select-selected']")));
         driver.findElement(By.xpath("//div[@class='select-selected']")).click();
-
+        String value = "Condo Insurance";
+        WebElement condoInsurance = driver.findElement(By.xpath("//div[contains(text(),'Condo Insurance')]"));
+        wait.until(ExpectedConditions.elementToBeClickable(condoInsurance));
+        condoInsurance.click();
         driver.quit();
     }
     @Test

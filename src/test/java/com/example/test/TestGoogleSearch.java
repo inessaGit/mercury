@@ -12,7 +12,6 @@ public class TestGoogleSearch extends BaseTest {
 
 	@Test
 	public void testGoogleSearch() {
-
 		GoogleSearch search = new GoogleSearch(DriverManager.getWebDriver()).get();
 		SearchResults results = search.search("educative");
 		results.nextPage();

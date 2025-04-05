@@ -13,17 +13,13 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.LoadableComponent;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public abstract class AbstractBasePage<T extends AbstractBasePage<T>> extends LoadableComponent<T> {
 
 	protected static final Logger LOG = LoggerFactory.getLogger(AbstractBasePage.class);
-
 	private static final String BASE_LOCATORS_DIR = "src/test/resources/locators";
 
 	protected final WebDriver driver;
@@ -40,14 +36,12 @@ public abstract class AbstractBasePage<T extends AbstractBasePage<T>> extends Lo
 			e.printStackTrace();
 		}
 	}
-
 	/* check whether the page load is complete */
 	@Override
 	protected void isLoaded() throws Error {
 		String state = (String) ((JavascriptExecutor) driver).executeScript("return document.readyState");
 		assertTrue("complete".equalsIgnoreCase(state), "page load status is not complete");
 	}
-
 	/* if page not loaded in time or any problem occurred, refresh the page */
 	@Override
 	protected void load() {
@@ -83,12 +77,5 @@ public abstract class AbstractBasePage<T extends AbstractBasePage<T>> extends Lo
 		}
 	}
 
-	/*
-	@SuppressWarnings("hiding")
-	protected <T> T wait(ExpectedCondition<T> condition, long maxTimeOutInSec) {
-		Wait<WebDriver> wait = new WebDriverWait(driver, maxTimeOutInSec);
 
-		return wait.until(condition);
-	}
-*/
 }

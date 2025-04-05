@@ -1,0 +1,5 @@
+11:47:14.037 INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 134.0.6998.165 (resolved driver for Chrome 134) - (WebDriverManager.java:1220) 
+11:47:14.048 INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/inessa/.cache/selenium/chromedriver/mac-arm64/134.0.6998.165/chromedriver - (WebDriverManager.java:1282) 
+11:47:15.208 INFO  com.example.webdriver.DriverFactory - creating webdriver ChromeDriver: chrome on mac (5a78e866864edea625ce162c767fd0b5) - (DriverFactory.java:75) 
+11:47:19.917 INFO  com.example.pages.AbstractBasePage - Get Auto Quote page:entering first name - (MercuryGetQuotePage.java:34) 
+11:47:20.429 INFO  com.example.webdriver.DriverManager - removing webdriver ChromeDriver: chrome on mac (5a78e866864edea625ce162c767fd0b5) - (DriverManager.java:25) 
