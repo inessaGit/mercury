@@ -3,14 +3,16 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'io.qameta.allure' version '2.12.0'
-    id("io.qameta.allure-report") version "2.12.0"
-    id 'maven-publish'
 }
 
 repositories {
     mavenCentral()
 }
 
+//https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Delete.html
+task deleteBuildFolder(type:Delete){
+    delete  "build", "screenshots", "logs"
+}
 test {
     useTestNG()
 }
